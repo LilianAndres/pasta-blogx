@@ -1,0 +1,15 @@
+<hr>
+
+<h3>Derniers commentaires</h3>
+
+<br>
+
+{% for comment in comments %}
+    <ul>
+        <li>
+            <a href="{{ path('post.show', {'slug': comment.post.slug}) }}">
+                {{ comment.username }}: "{{ comment.content }}"
+            </a>
+        </li>
+    </ul>
+{% endfor %}

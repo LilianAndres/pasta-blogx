@@ -1,0 +1,11 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block content %}
+    <h1>Editer le commentaire</h1>
+
+    {{ include('admin/comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_comment_index') }}">Retour à la liste</a>
+
+    {{ include('admin/comment/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,15 @@
+<h3>Catégories</h3>
+
+<br>
+
+{% for category in categories %}
+    <ul>
+        <li>
+            <a href="{{ path('post.category', {'id': category.id}) }}">
+                {% if output[category.name] > 0 %}
+                    {{ category.name }} ({{ output[category.name] }} posts trouvé(s))
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+{% endfor %}

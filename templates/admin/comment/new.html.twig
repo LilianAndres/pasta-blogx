@@ -1,0 +1,9 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block content %}
+    <h1>Créer un nouveau commentaire</h1>
+
+    {{ include('admin/comment/_form.html.twig') }}
+
+    <a href="{{ path('admin_comment_index') }}" class="btn btn-primary">Retour à la liste</a>
+{% endblock %}

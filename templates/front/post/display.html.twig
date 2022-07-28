@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="listpost">
+
+        <h2>Liste des Post</h2>
+
+        {% for post in listPost %}
+
+            <a href="{{ path('post.show', {'slug': post.slug }) }}">
+                <div class="postoflist">
+                    <h3>{{ post.title }}</h3>
+                    <h5>{{ post.description }}</h5>
+                    <div class="etiquettes">
+                        {% for category in post.categories %}
+                            <p class="etiquette">{{ category.name }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </a>
+
+
+        {% endfor %}
+
+    </div>
+
+    {{ knp_pagination_render(listPost) }}
+
+{% endblock %}

@@ -1,0 +1,220 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+
+  header {
+
+    a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 15%;
+      background-color: #ffef9f;
+      padding: 20px;
+
+      .left {
+        display: flex;
+        width: 16vw;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          width: 5vw;
+          height: 10vh;
+        }
+
+        .header.title {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 20px;
+        }
+
+      }
+
+      .admin.right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 20vw;
+      }
+
+    }
+
+  }
+
+  .contentSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+
+    .sidebar {
+
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      height: 90vh;
+      background-color: grey;
+      border-radius: 5px;
+      color: white;
+      margin-top: 11vh;
+      margin-right: 5vw;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 5px;
+
+      ul {
+        list-style:none;
+        margin-left:0;
+        padding-left:0;
+      }
+
+    }
+
+    .contentBlock {
+
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      height: auto;
+      margin-top: 5vh;
+      margin-left: 5vw;
+      align-items: center;
+
+      .pagination {
+        margin-top: 5vh !important;
+        justify-content: center !important;
+      }
+
+      .postform {
+
+        width: 50%;
+
+      }
+
+      .listpost {
+
+        display: flex;
+        flex-direction: column;
+        height: auto;
+
+        a {
+          width: 40vw;
+          height: 15vh;
+          margin-bottom: 2vh;
+        }
+
+        a, a:hover, a:focus, a:active {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .postoflist {
+          display: flex;
+          flex-direction: column;
+
+          width: 40vw;
+          height: 16vh;
+
+          margin-top: 2vh;
+
+          margin-bottom: 2vh;
+
+          padding: 5px 0 5px 10px;
+          background-color: #ffef9f;
+          border-radius: 5px;
+        }
+
+        .etiquettes {
+          display: flex !important;
+          flex-direction: row !important;
+        }
+
+        .etiquette {
+          background-color: #9a9a9a;
+          width: 5vw;
+          text-align: center;
+          border-radius: 2px;
+          margin-right: 1vw;
+        }
+
+      }
+
+      .postEntier {
+        display: flex;
+        flex-direction: column;
+
+        width: 45vw;
+        height: auto;
+
+        background-color: #ffef9f;
+        border-radius: 5px;
+        padding: 15px;
+      }
+
+      .commentsList {
+
+        justify-content: flex-start !important;
+
+        h2 {
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+        }
+
+        .Onecomment {
+          display: flex;
+          flex-direction: column;
+
+          width: 40vw;
+
+          border-top: grey solid 1px;
+
+          margin-top: 1vh;
+          // margin-bottom: 1vh;
+        }
+
+      }
+
+      .commentForm {
+        width: 70%;
+      }
+
+    }
+
+  }
+
+  footer {
+    bottom: 0;
+    margin-top: 5vh;
+  }
+
+  .pagination {
+    margin-top: 5vh !important;
+    justify-content: center !important;
+  }
+
+  .sidebar a {
+
+    text-decoration: underline;
+    color: #ffef9f;
+
+  }
+
+  .sidebar {
+
+    padding-left: 15px;
+    padding-right: 7px;
+
+  }
+
+}

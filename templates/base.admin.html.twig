@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}PASTA BLOG'X{% endblock %}</title>
+        <link rel="icon" href="{{ asset('icons/pastablog.ico') }}">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    {% block header %}
+        <header>
+            <nav>
+                <div class="admin left">
+                    <img src="{{ asset('icons/pastablog.png') }}" alt=""/>
+                    <a class="header title" href="{{ path('post') }}">Pasta blog'x</a>
+                </div>
+                <div class="admin right">
+                    <a class="btn btn-secondary" href="{{ path('admin_post_index') }}">Posts</a>
+                    <a class="btn btn-secondary" href="{{ path('admin_category_index') }}">Catégories</a>
+                    <a class="btn btn-secondary" href="{{ path('admin_comment_index') }}">Commentaires</a>
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block sidebar %}{% endblock %}
+    {% block footer %}
+        <footer class="text-center text-white" style="background-color:#ffef9f;">
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0);">
+                © 2022 Copyright:
+                <a class="text-dark" href="https://lilian-andres.fr/">Lilian & Lilian</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    {% endblock %}
+    </body>
+</html>

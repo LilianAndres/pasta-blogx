@@ -1,0 +1,47 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block content %}
+    <h1>Comment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Content</th>
+                <th>Valid</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.id }}</td>
+                <td>{{ comment.username }}</td>
+                <td>{{ comment.content }}</td>
+                <td>{{ comment.valid ? 'Yes' : 'No' }}</td>
+                <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('admin_comment_show', {'id': comment.id}) }}" class="btn btn-primary">Voir</a>
+                    {% if comment.valid %}
+                        <a href="{{ path('admin_comment_validate', {'id': comment.id}) }}" class="btn btn-warning">Invalider</a>
+                    {% else %}
+                        <a href="{{ path('admin_comment_validate', {'id': comment.id}) }}" class="btn btn-warning">Valider</a>
+                    {% endif %}
+                    {{ include('admin/comment/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun commentaire trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container">
+        {{ knp_pagination_render(comments) }}
+    </div>
+
+{% endblock %}
